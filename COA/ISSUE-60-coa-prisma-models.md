@@ -120,6 +120,24 @@ accountsCreated Account[]
 - Internal: existing `AccountHead` / `SubAccount` models in `backend/prisma/schema.prisma` (lines 65–96) — mirror their `createdBy` + `@relation(..., onDelete: Restrict)` pattern on the new `Account` model.
 - Internal: commit `8b344b7` — the commit that introduced the 3-table design this PR reverses. Useful as historical context.
 
+## Found during review: partial unique index for root uniqueness
+
+The `@@unique([parentId, seed])` constraint **does not enforce uniqueness when `parentId IS NULL`**. Postgres treats NULL as distinct from every other NULL in regular unique constraints — a SQL standard quirk. Consequence: two ASSETS roots both with `parentId = NULL` would both be accepted by the DB, violating the spec's "one root per `AccountType`" rule.
+
+Verified by inserting two ASSETS rows with `parentId = NULL` before the fix — both succeeded. After the fix, the second is rejected with `P2002 / unique_violation`.
+
+Fix: a **partial unique index**, appended to the new migration's SQL:
+
+```sql
+CREATE UNIQUE INDEX "one_root_per_account_type"
+  ON "accounts" ("accountType")
+  WHERE "parentId" IS NULL;
+```
+
+This applies only to root rows (`parentId IS NULL`), enforcing that `accountType` is unique among them — exactly five rows max with null parents (one per enum value).
+
+**Prisma quirk to know:** `schema.prisma`'s DSL cannot express partial indexes (no `WHERE` clause syntax in `@@unique`). The index lives in the migration SQL only, not in `schema.prisma`. Next time anyone runs `prisma migrate dev`, Prisma will see "this index is in DB but not in schema" and propose to drop it. **Do not accept that prompt.** The index is intentionally outside Prisma's awareness.
+
 ## Acceptance criteria
 
 - [ ] Old `AccountType` / `AccountHead` / `SubAccount` models removed from `schema.prisma`.
@@ -131,6 +149,7 @@ accountsCreated Account[]
 - [ ] `accountsCreated Account[]` back-relation added on `User`.
 - [ ] Indexes: `@@index([parentId])`, `@@index([accountType, isPostable])`, `@@unique([parentId, seed])`, `displayCode @unique`.
 - [ ] New `CompanyConfig` model added with `coaDigits Int @default(10)`.
+- [ ] Partial unique index `one_root_per_account_type` on `accounts(accountType) WHERE parentId IS NULL` added to the migration SQL (cannot be declared in `schema.prisma`).
 - [ ] `prisma migrate dev` runs cleanly against a fresh database.
 - [ ] Generated migration SQL reviewed — DROP order is sane, FK constraints intact, no unintended data loss surprises beyond the expected destructive drop.
 
