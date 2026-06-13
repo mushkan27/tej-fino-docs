@@ -65,9 +65,9 @@ Rejected: pre-check via findUnique before insert. Pre-checks are racy; the DB
 
 - **The seam earns its keep.** `DisplayCodeService.for(account)`, `forMany(accounts)`, and `recomputeSubtree(rootId, tx)` is the only surface callers may touch. This sprint, `for`/`forMany` are trivial column reads and `recomputeSubtree` does the cascade. Next sprint can swap any of them — column read → on-demand compute, BFS → CTE — without changing a single caller. The pure padding helper stays private to the seam.
 - **Head vs sub formulas share inputs, differ on filler placement.**
-  - Head: `(paddedAncestorChain + paddedSelf).padEnd(coaDigits, '0')` — filler at the end.
-  - Sub:  `paddedAncestorChain + '0'.repeat(middle) + paddedSelf` where `middle = coaDigits − chain − self`. Filler in the middle. `middle < 0` → `422`.
-  Same building blocks, different placement. Easy to mix up.
+  - Head: `(paddedAncestorChain + paddedSelf).padEnd(coaDigits, '0')` — chain (root → parent) + self, then right-fill with zeros.
+  - Sub:  `paddedAncestorChain + '0'.repeat(middle) + paddedSelf` where `middle = coaDigits − paddedAncestorChain.length − paddedSelf.length`. Self appears **once** at the trailing leaf position; its chain slot is absorbed into the filler. `middle < 0` → `422`.
+  Same building blocks, different placement of the filler — at the end for heads, in the middle for subs.
 - **Widening shifts the whole subtree, not just direct siblings.** Every descendant's code embeds the padded chain, so widening level *N* shifts every code at level ≥ *N* in the parent's subtree. Recursion is required, not optional.
 - **Rejection paths must come from the DoD checklist, not memory.** Keep the ticket open while implementing — auth (401), DTO (400), service input rules (400), parent lookup (404), parent compatibility (400), root-exists pre-check (409), overflow (422), DB unique races (409). Cheap-first ordering.
 - **`P2002.meta.target` distinguishes the three uniqueness failures.** Match by constraint name for the partial index, match by column array for `(parentId, seed)`, match by single column for `displayCode`.
