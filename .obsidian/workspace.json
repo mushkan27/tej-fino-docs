@@ -1,0 +1,242 @@
+{
+  "main": {
+    "id": "4bf6f79c7b4cd93e",
+    "type": "split",
+    "children": [
+      {
+        "id": "8f8defa6f76fe2fd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "78268a954988aec4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "COA/database increment rule.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "database increment rule"
+            }
+          },
+          {
+            "id": "7de189d173b3f6a0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "COA/Frontend desing for coa.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Frontend desing for coa"
+            }
+          },
+          {
+            "id": "d4cb5a5fc1898716",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "COA/ISSUE-60-coa-prisma-models.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ISSUE-60-coa-prisma-models"
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "e46484d5c0e0c354",
+    "type": "split",
+    "children": [
+      {
+        "id": "5fa23157da558157",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "10d59ffb4fc5f79d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "4991b1ad9fcd624e",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "34f20e1d14eb6093",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "741058c7fface159",
+    "type": "split",
+    "children": [
+      {
+        "id": "a647d1992e224631",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1ebf2c3798da4be6",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Databases/database increment rule.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for database increment rule"
+            }
+          },
+          {
+            "id": "8f0bd4d1071141e4",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Databases/database increment rule.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from database increment rule"
+            }
+          },
+          {
+            "id": "ad70ffd2046702e6",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "5a3892b42bfa8201",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "14f2ef3534d475fe",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Databases/database increment rule.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of database increment rule"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "d4cb5a5fc1898716",
+  "lastOpenFiles": [
+    "COA/ISSUE-62-coa-api-backend.md.tmp.120741.1781177269279",
+    "COA/ISSUE-62-coa-api-backend.md.tmp.120741.1781176737404",
+    "COA/ISSUE-62-coa-api-backend.md",
+    "COA/ISSUE-62-coa-api-backend.md.tmp.120741.1781175222456",
+    "COA/ISSUE-60-coa-prisma-models.md.tmp.5495.1781163786717",
+    "COA/ISSUE-60-coa-prisma-models.md.tmp.5495.1781163779718",
+    "COA/ISSUE-60-coa-prisma-models.md.tmp.5495.1781155400458",
+    "COA/database increment rule.md",
+    "COA/newcoarules.md",
+    "Untitled.md",
+    "COA/newcoarules.md.tmp.159202.1781008609009",
+    "Pasted image 20260608075842.png",
+    "Pasted image 20260608075823.png",
+    "Pasted image 20260608075740.png",
+    "COA/Frontend desing for coa.md",
+    "COA/ISSUE-60-coa-prisma-models.md",
+    "COA/coa tables rules.md",
+    "Untitled",
+    "skills/pr-writer.md",
+    "COA",
+    "skills/issue-ready.md",
+    "skills",
+    "Databases/ISSUE-60-coa-prisma-models.md.tmp.81682.1780753594743",
+    "coa tables rules.md"
+  ]
+}
