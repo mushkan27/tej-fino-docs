@@ -48,9 +48,23 @@
               "icon": "lucide-file",
               "title": "ISSUE-60-coa-prisma-models"
             }
+          },
+          {
+            "id": "dfe06a9e364e3f84",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Voucher/Voucher Payment.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Voucher Payment"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -212,8 +226,13 @@
       "bases:Create new base": false
     }
   },
-  "active": "d4cb5a5fc1898716",
+  "active": "dfe06a9e364e3f84",
   "lastOpenFiles": [
+    "folder structure for voucher backend.md",
+    "Voucher/folder structure for voucher backend.md",
+    "Voucher/Voucher Payment.md",
+    "Voucher",
+    "COA/ISSUE-60-coa-prisma-models.md",
     "COA/ISSUE-62-coa-api-backend.md.tmp.120741.1781177269279",
     "COA/ISSUE-62-coa-api-backend.md.tmp.120741.1781176737404",
     "COA/ISSUE-62-coa-api-backend.md",
@@ -229,14 +248,11 @@
     "Pasted image 20260608075823.png",
     "Pasted image 20260608075740.png",
     "COA/Frontend desing for coa.md",
-    "COA/ISSUE-60-coa-prisma-models.md",
     "COA/coa tables rules.md",
-    "Untitled",
     "skills/pr-writer.md",
     "COA",
     "skills/issue-ready.md",
     "skills",
-    "Databases/ISSUE-60-coa-prisma-models.md.tmp.81682.1780753594743",
     "coa tables rules.md"
   ]
 }
